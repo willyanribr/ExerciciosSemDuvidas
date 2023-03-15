@@ -1,0 +1,86 @@
+package com.mycompany.pedidomesabarex;
+
+public class Pedido {
+    private int numero;
+    private String descricao;
+    private int quantidade;
+    private double valorUnitario;
+    private double valorTotal;
+
+    public Pedido(int numero, String descricao) {
+        this.numero = numero;
+        this.descricao = descricao;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
+        this.calcularValorTotal();
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public double getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    private void calcularValorTotal() {
+        this.valorTotal = this.quantidade * this.valorUnitario;
+    }
+}
+
+package com.mycompany.pedidomesabarex;
+
+public class PedidoMesaBarEx {
+
+    public static void main(String[] args) {
+        
+        Pedido pedido1 = new Pedido(1, "Notebook");
+        pedido1.setQuantidade(2);
+        pedido1.setValorUnitario(2000.0);
+
+        Pedido pedido2 = new Pedido(2, "Smartphone");
+        pedido2.setQuantidade(3);
+        pedido2.setValorUnitario(1500.0);
+
+        Pedido pedido3 = new Pedido(3, "Tablet");
+        pedido3.setQuantidade(1);
+        pedido3.setValorUnitario(800.0);
+
+        Pedido pedido4 = new Pedido(4, "Mouse");
+        pedido4.setQuantidade(5);
+        pedido4.setValorUnitario(50.0);
+
+        Pedido pedido5 = new Pedido(5, "Teclado");
+        pedido5.setQuantidade(3);
+        pedido5.setValorUnitario(100.0);
+
+        double totalPedidos = pedido1.getValorTotal() + pedido2.getValorTotal() + pedido3.getValorTotal() +
+                pedido4.getValorTotal() + pedido5.getValorTotal();
+
+        System.out.println("O total dos 5 pedidos é de R$" + totalPedidos);
+        
+    }
+}
+
