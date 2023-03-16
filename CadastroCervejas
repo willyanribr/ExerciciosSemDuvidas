@@ -1,0 +1,70 @@
+public class Cerveja {
+    private String marca;
+    private int codigo;
+    public String tipo;
+    public double teorAlcoolico;
+    
+    private static int codigoAtual = 1;
+    
+    public Cerveja(String marca) {
+        this.marca = marca;
+        this.codigo = codigoAtual;
+        codigoAtual++;
+    }
+    
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+    public void setTeorAlcoolico(double teorAlcoolico) {
+        this.teorAlcoolico = teorAlcoolico;
+    }
+    
+    public String getMarca() {
+        return marca;
+    }
+    
+    public int getCodigo() {
+        return codigo;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Cerveja> listaCervejas = new ArrayList<>();
+        
+        Cerveja cerveja1 = new Cerveja("Skol");
+        cerveja1.setTipo("Pilsen");
+        cerveja1.setTeorAlcoolico(4.7);
+        listaCervejas.add(cerveja1);
+        
+        Cerveja cerveja2 = new Cerveja("Brahma");
+        cerveja2.setTipo("Pilsen");
+        cerveja2.setTeorAlcoolico(4.8);
+        listaCervejas.add(cerveja2);
+        
+        Cerveja cerveja3 = new Cerveja("Stella Artois");
+        cerveja3.setTipo("Pilsen");
+        cerveja3.setTeorAlcoolico(5.0);
+        listaCervejas.add(cerveja3);
+        
+        Cerveja cerveja4 = new Cerveja("Heineken");
+        cerveja4.setTipo("Pilsen");
+        cerveja4.setTeorAlcoolico(5.0);
+        listaCervejas.add(cerveja4);
+        
+        Cerveja cerveja5 = new Cerveja("Corona");
+        cerveja5.setTipo("Pilsen");
+        cerveja5.setTeorAlcoolico(4.5);
+        listaCervejas.add(cerveja5);
+        
+        System.out.println("Cervejas cadastradas:");
+        for (Cerveja cerveja : listaCervejas) {
+            System.out.println("Marca: " + cerveja.getMarca() + " | Tipo: " + cerveja.tipo + " | Teor Alcoólico: " + cerveja.teorAlcoolico + " | Código: " + cerveja.getCodigo());
+        }
+    }
+}
