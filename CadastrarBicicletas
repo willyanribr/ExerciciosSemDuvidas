@@ -1,0 +1,80 @@
+
+public class CadastroBicicletas {
+
+    public static void main(String[] args) {
+        // Cadastrar as bicicletas
+        Bicicleta b1 = new Bicicleta("Caloi", 26);
+        b1.setId(1);
+        b1.setModelo("Poti");
+        b1.cor = "Azul";
+        b1.preco = 599.99;
+        b1.estoque = 10;
+
+        Bicicleta b2 = new Bicicleta("Aro", 29);
+        b2.setId(2);
+        b2.setModelo("Kombat");
+        b2.cor = "Preto";
+        b2.preco = 799.99;
+        b2.estoque = 5;
+
+        Bicicleta b3 = new Bicicleta("Ox", 24);
+        b3.setId(3);
+        b3.setModelo("Jump");
+        b3.cor = "Verde";
+        b3.preco = 499.99;
+        b3.estoque = 8;
+
+        Bicicleta b4 = new Bicicleta("Tito", 20);
+        b4.setId(4);
+        b4.setModelo("Bolt");
+        b4.cor = "Amarelo";
+        b4.preco = 399.99;
+        b4.estoque = 15;
+        
+        b1.mostrarDados();
+        System.out.println("-------------------------");
+        b2.mostrarDados();
+    }
+}
+
+package com.mycompany.cadastrobicicletas;
+
+
+public class Bicicleta {
+
+    private int id;
+    private String marca;
+    private String modelo;
+    private int aro;
+    
+
+    public String cor;
+    public double preco;
+    public int estoque;
+
+    public Bicicleta(String marca, int aro) {
+        this.marca = marca;
+        this.aro = aro;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void mostrarDados() {
+        System.out.println("ID: " + id);
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Aro: " + aro);
+        System.out.println("Cor: " + cor);
+        System.out.println("Preço: " + preco);
+        System.out.println("Estoque: " + estoque);
+    }
+}
