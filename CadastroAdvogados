@@ -1,0 +1,91 @@
+
+package com.mycompany.cadastroadvogados;
+
+import java.util.Scanner;
+
+public class CadastroAdvogados {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Advogado[] advogados = new Advogado[8];
+        
+        for(int i=0; i<8; i++) {
+            System.out.println("Cadastro de Advogado " + (i+1));
+            
+            System.out.print("Digite o número da OAB: ");
+            int oab = sc.nextInt();
+            sc.nextLine();
+            
+            System.out.print("Digite o nome do advogado: ");
+            String nome = sc.nextLine();
+            
+            Advogado advogado = new Advogado(oab, nome);
+            
+            System.out.print("Digite o endereço do advogado: ");
+            String endereco = sc.nextLine();
+            advogado.cadastrarEndereco(endereco);
+            
+            System.out.print("Digite o telefone do advogado: ");
+            String telefone = sc.nextLine();
+            advogado.cadastrarTelefone(telefone);
+            
+            System.out.print("Digite o e-mail do advogado: ");
+            String email = sc.nextLine();
+            advogado.cadastrarEmail(email);
+            
+            advogados[i] = advogado;
+        }
+        
+        System.out.println("\nÚltimos advogados cadastrados:");
+        System.out.println(advogados[5].getOab() + " " + advogados[5].getNome() + " " + advogados[5].getEndereco() + " " + advogados[5].getTelefone() + " " + advogados[5].getEmail());
+        System.out.println(advogados[6].getOab() + " " + advogados[6].getNome() + " " + advogados[6].getEndereco() + " " + advogados[6].getTelefone() + " " + advogados[6].getEmail());
+        System.out.println(advogados[7].getOab() + " " + advogados[7].getNome() + " " + advogados[7].getEndereco() + " " + advogados[7].getTelefone() + " " + advogados[7].getEmail());
+    }
+}
+
+
+package com.mycompany.cadastroadvogados;
+
+public class Advogado {
+    private int oab;
+    private String nome;
+    private String endereco;
+    private String telefone;
+    private String email;
+    
+    public Advogado(int oab, String nome) {
+        this.oab = oab;
+        this.nome = nome;
+    }
+    
+    public void cadastrarEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    
+    public void cadastrarTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+    
+    public void cadastrarEmail(String email) {
+        this.email = email;
+    }
+    
+    public int getOab() {
+        return oab;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+    
+    public String getEndereco() {
+        return endereco;
+    }
+    
+    public String getTelefone() {
+        return telefone;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+}
